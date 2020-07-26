@@ -1,8 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller : MonoBehaviour
+[RequireComponent(typeof(Rigidbody), typeof(Collider))]
+public abstract class Controller : MonoBehaviour
 {
-    //TODO Add method ReadInput
+    protected Rigidbody _rigidbody;
+    protected bool newInput;
+
+    private void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+    }
+    
+    public abstract void ReadInput(InputData data);
 }

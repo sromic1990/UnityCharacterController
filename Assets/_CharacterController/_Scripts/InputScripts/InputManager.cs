@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    #region FIELDS
     [Range(0, 10)] 
     [SerializeField] private int axisCount;
     public int AxisCount
@@ -17,10 +18,15 @@ public class InputManager : MonoBehaviour
     {
         get { return buttonCount; }
     }
+
+    [SerializeField] private Controller _controller;
+    #endregion
     
+    #region METHODS
     public void PassInput(InputData data)
     {
         Debug.Log("Movement: " + data.axes[0] + " , " + data.axes[1]);
+        _controller.ReadInput(data);
     }
 
     public void RefreshTracker()
@@ -31,6 +37,7 @@ public class InputManager : MonoBehaviour
             dt.Refresh();
         }
     }
+    #endregion
 }
 
 [System.Serializable]
