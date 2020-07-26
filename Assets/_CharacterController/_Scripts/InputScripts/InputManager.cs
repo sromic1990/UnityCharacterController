@@ -4,9 +4,23 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    [Range(0, 10)] 
+    [SerializeField] private int axisCount;
+    public int AxisCount
+    {
+        get { return axisCount; }
+    }
+
+    [Range(0, 20)] 
+    [SerializeField] private int buttonCount;
+    public int ButtonCount
+    {
+        get { return buttonCount; }
+    }
+    
     public void PassInput(InputData data)
     {
-        
+        Debug.Log("Movement: " + data.axes[0] + " , " + data.axes[1]);
     }
 }
 
