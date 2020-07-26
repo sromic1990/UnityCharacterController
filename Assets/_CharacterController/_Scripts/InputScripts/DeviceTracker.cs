@@ -16,4 +16,5 @@ public abstract class DeviceTracker : MonoBehaviour
         
         _inputData = new InputData(_inputManager.AxisCount, _inputManager.ButtonCount);
     }
+    public abstract void Refresh();
 }

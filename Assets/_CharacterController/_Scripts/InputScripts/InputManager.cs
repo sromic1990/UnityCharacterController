@@ -22,6 +22,15 @@ public class InputManager : MonoBehaviour
     {
         Debug.Log("Movement: " + data.axes[0] + " , " + data.axes[1]);
     }
+
+    public void RefreshTracker()
+    {
+        DeviceTracker dt = GetComponent<DeviceTracker>();
+        if (dt != null)
+        {
+            dt.Refresh();
+        }
+    }
 }
 
 [System.Serializable]
