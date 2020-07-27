@@ -25,7 +25,7 @@ public class InputManager : MonoBehaviour
     #region METHODS
     public void PassInput(InputData data)
     {
-        Debug.Log("Movement: " + data.axes[0] + " , " + data.axes[1]);
+        // Debug.Log("Movement: " + data.axes[0] + " , " + data.axes[1]);
         _controller.ReadInput(data);
     }
 

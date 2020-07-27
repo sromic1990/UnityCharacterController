@@ -80,6 +80,11 @@ public class KeyboardTracker : DeviceTracker
                 _inputData.buttons[i] = true;
                 _isNewDataAvailable = true;
             }
+            else if(Input.GetKeyUp(buttonKeys[i]))
+            {
+                _inputData.buttons[i] = false;
+                _isNewDataAvailable = true;
+            }
         }
 
         if (_isNewDataAvailable)

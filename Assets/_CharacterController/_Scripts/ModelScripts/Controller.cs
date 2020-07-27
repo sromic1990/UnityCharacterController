@@ -7,11 +7,14 @@ using UnityEngine;
 public abstract class Controller : MonoBehaviour
 {
     protected Rigidbody _rigidbody;
-    protected bool newInput;
+    protected bool _newInput;
+    protected Collider _collider;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _collider = GetComponent<Collider>();
+
     }
     
     public abstract void ReadInput(InputData data);
